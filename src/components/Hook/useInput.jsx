@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./UserInform.css";
 
 export function useInput(defaultValue, validationFn) {
   const [enteredValue, setEnteredValue] = useState(defaultValue);
