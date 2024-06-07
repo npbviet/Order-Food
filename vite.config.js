@@ -9,5 +9,5 @@ export default defineConfig({
     outDir: "./build",
     emptyOutDir: true,
   },
-  base: "Order-Food",
+  base: "/Order-Food",
 });
