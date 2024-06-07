@@ -9,5 +9,5 @@ export default defineConfig({
     outDir: "./build",
     emptyOutDir: true,
   },
-  base: "npbviet/Order-Food",
+  base: "Order-Food",
 });
