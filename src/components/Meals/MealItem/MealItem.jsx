@@ -20,7 +20,7 @@ export const MealItem = (props) => {
       <div className={formStyles.form}>
         <div className={stylesInput.input}>
           <label>Amount</label>
-          <input type="number" ref={quantityRef}></input>
+          <input type="number" min="0" ref={quantityRef}></input>
         </div>
         <button
           onClick={() =>
