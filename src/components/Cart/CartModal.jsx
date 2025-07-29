@@ -12,8 +12,8 @@ const CartModal = (props) => {
   function handleOrder(event) {
     event.preventDefault();
 
-    if (!validInform) {
-      alert("Please valid your information");
+    if (!validInform || items.length === 0) {
+      alert("Please valid your information and ensure your cart is not empty.");
       return;
     } else {
       resetItem();
@@ -35,7 +35,7 @@ const CartModal = (props) => {
         ))}
 
         <div className={styles.total}>
-          Total Amount<div>{totalAmount}$</div>
+          Total Amount<div>{totalAmount.toFixed(2)}$</div>
         </div>
         <UserInform onValid={validFn} />
         <div className={styles.actions}>

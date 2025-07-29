@@ -31,13 +31,29 @@ export default function UserInform(props) {
     handleInputBlur: handleCityBlur,
     hasError: cityHasError,
   } = useInput("", (value) => hasMinLength(value, 5) && isNotEmpty(value));
+
   useEffect(() => {
-    if (!nameHasError && !streetHasError && !codeHasError && !cityHasError) {
-      props.onValid(true);
-    } else {
-      props.onValid(false);
-    }
-  }, [nameHasError, streetHasError, codeHasError, cityHasError]);
+    const isValid =
+      !nameHasError &&
+      !streetHasError &&
+      !codeHasError &&
+      !cityHasError &&
+      nameValue.trim().length > 0 &&
+      streetValue.trim().length > 0 &&
+      codeValue.trim().length > 0 &&
+      cityValue.trim().length > 0;
+
+    props.onValid(isValid);
+  }, [
+    nameHasError,
+    streetHasError,
+    codeHasError,
+    cityHasError,
+    nameValue,
+    streetValue,
+    codeValue,
+    cityValue,
+  ]);
 
   return (
     <form>
